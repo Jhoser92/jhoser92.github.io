@@ -1625,10 +1625,6 @@
 
 /* Narrower */
 
-	#navPanel, #navButton {
-		display: none;
-	}
-
 	@include breakpoint('<=narrower') {
 
 		/* Basic */
@@ -1715,45 +1711,6 @@
 				padding-bottom: 1px;
 			}
 
-			#navButton {
-				@include vendor('backface-visibility', 'hidden');
-				@include vendor('transition', 'transform #{_duration(navPanel)} ease');
-				display: block;
-				height: 44px;
-				left: 0;
-				position: fixed;
-				top: 0;
-				width: 100%;
-				z-index: _misc(z-index-base) + 1;
-
-				.toggle {
-					@include icon(false, solid);
-					height: 100%;
-					left: 0;
-					position: absolute;
-					top: 0;
-					width: 100%;
-					border: 0;
-					outline: 0;
-
-					&:before {
-						background: rgba(192,192,192,0.75);
-						border-radius: _size(border-radius);
-						color: #fff;
-						content: '\f0c9';
-						display: block;
-						font-size: 16px;
-						height: 2.25em;
-						left: 0.5em;
-						line-height: 2.25em;
-						position: absolute;
-						text-align: center;
-						top: 0.5em;
-						width: 3.5em;
-					}
-				}
-			}
-
 			#navPanel {
 				@include vendor('backface-visibility', 'hidden');
 				@include vendor('transform', 'translateX(#{_size(navPanel) * -1})');
@@ -1798,10 +1755,6 @@
 			body {
 				&.navPanel-visible {
 					#page-wrapper {
-						@include vendor('transform', 'translateX(#{_size(navPanel)})');
-					}
-
-					#navButton {
 						@include vendor('transform', 'translateX(#{_size(navPanel)})');
 					}
 
